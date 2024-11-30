@@ -1,0 +1,109 @@
+
+- command: ls
+  exit_code: 0
+  shell: bash
+  session_id: 6832c5bbfb4e4234831a3e5df922701e
+  cwd: /home/cloudshell-user
+  time: 1732987452
+- command: cd
+  exit_code: 0
+  shell: bash
+  session_id: 6832c5bbfb4e4234831a3e5df922701e
+  cwd: /home/cloudshell-user
+  time: 1732987455
+- command: {                                                              >     \"ProductID\": \"p1\",                                                                                                >     \"Name\": \"Pizza Margherita\",                                                                                       >     \"Description\": \"Classic cheese and tomato pizza.\",                                                                >     \"Price\": 8.99,                                                                                                    >     \"ImagePath\": \"https://s3.amazonaws.com/product-images-supplychain/pizza/margherita.jpg\"                           > }                                                                                                                     bash: ProductID:: command not found                                                                                     bash: Name:: command not found                                                                                          bash: Description:: command not found                                                                                   bash: Price:: command not found                                                                                         bash: ImagePath:: command not found
+  exit_code: 0
+  shell: bash
+  session_id: 6832c5bbfb4e4234831a3e5df922701e
+  cwd: /home/cloudshell-user
+  time: 1732987464
+- command: aws dynamodb put-item \\                                        >     --table-name Products \\                                                                                           >     --item '{                                                                                                         >         \"ProductID\": {\"S\": \"p1\"},                                                                                     >         \"Name\": {\"S\": \"Pizza Margherita\"},                                                                            >         \"Description\": {\"S\": \"Classic cheese and tomato pizza.\"},                                                     >         \"Price\": {\"N\": \"8.99\"},                                                                                       >         \"ImagePath\": {\"S\": \"https://s3.amazonaws.com/product-images-supplychain/pizza/margherita.jpg\"}                >     }'                                                                                                                                                                                                                                        An error occurred (ValidationException) when calling the PutItem operation: One or more parameter values were invalid: Missing the key Id in the item
+  exit_code: 0
+  shell: bash
+  session_id: 6832c5bbfb4e4234831a3e5df922701e
+  cwd: /home/cloudshell-user
+  time: 1732987484
+- command: aws dynamodb put-item \\                                        >     --table-name Products \\                                                                                           >     --item '{                                                                                                         >         \"Id\": {\"S\": \"p1\"},                                                                                            >         \"Name\": {\"S\": \"Pizza Margherita\"},                                                                            >         \"Description\": {\"S\": \"Classic cheese and tomato pizza.\"},                                                     >         \"Price\": {\"N\": \"8.99\"},                                                                                       >         \"ImagePath\": {\"S\": \"https://s3.amazonaws.com/product-images-supplychain/pizza/margherita.jpg\"}                >     }'
+  exit_code: 0
+  shell: bash
+  session_id: 6832c5bbfb4e4234831a3e5df922701e
+  cwd: /home/cloudshell-user
+  time: 1732987538
+- command: aws dynamodb put-item \\                                        >     --table-name Users \\                                                                                              >     --item '{                                                                                                         >         \"UserID\": {\"S\": \"u1\"},                                                                                        >         \"Email\": {\"S\": \"user@example.com\"},                                                                           >         \"Password\": {\"S\": \"hashed_password\"},                                                                         >         \"Cart\": {\"L\": []},                                                                                            >         \"OrderHistory\": {\"L\": []}                                                                                     >     }'                                                                                                                                                                                                                                        An error occurred (ValidationException) when calling the PutItem operation: One or more parameter values were invalid: Missing the key Id in the item
+  exit_code: 0
+  shell: bash
+  session_id: 6832c5bbfb4e4234831a3e5df922701e
+  cwd: /home/cloudshell-user
+  time: 1732987654
+- command: aws dynamodb put-item \\                                        >     --table-name Users \\                                                                                              >     --item '{                                                                                                         >         \"Id\": {\"S\": \"u1\"},                                                                                            >         \"Email\": {\"S\": \"user@example.com\"},                                                                           >         \"Password\": {\"S\": \"hashed_password\"},                                                                         >         \"Cart\": {\"L\": []},                                                                                            >         \"OrderHistory\": {\"L\": []}                                                                                     >     }'
+  exit_code: 0
+  shell: bash
+  session_id: 6832c5bbfb4e4234831a3e5df922701e
+  cwd: /home/cloudshell-user
+  time: 1732987707
+- command: aws dynamodb put-item \\                                        >     --table-name Orders \\                                                                                             >     --item '{                                                                                                         >         \"OrderID\": {\"S\": \"o1\"},                                                                                       >         \"UserID\": {\"S\": \"u1\"},                                                                                        >         \"Items\": {\"L\": [{\"M\": {\"ProductID\": {\"S\": \"p1\"}, \"Quantity\": {\"N\": \"2\"}}}]},                                  >         \"TotalPrice\": {\"N\": \"17.98\"},                                                                                 >         \"Status\": {\"S\": \"Pending\"}                                                                                    >     }'                                                                                                                                                                                                                                        An error occurred (ValidationException) when calling the PutItem operation: One or more parameter values were invalid: Missing the key OrderId in the item
+  exit_code: 0
+  shell: bash
+  session_id: 6832c5bbfb4e4234831a3e5df922701e
+  cwd: /home/cloudshell-user
+  time: 1732987735
+- command: aws dynamodb put-item \\                                        >     --table-name Orders \\                                                                                             >     --item '{                                                                                                         >         \"OrderId\": {\"S\": \"o1\"},                                                                                       >         \"UserID\": {\"S\": \"u1\"},                                                                                        >         \"Items\": {\"L\": [{\"M\": {\"ProductID\": {\"S\": \"p1\"}, \"Quantity\": {\"N\": \"2\"}}}]},                                  >         \"TotalPrice\": {\"N\": \"17.98\"},                                                                                 >         \"Status\": {\"S\": \"Pending\"}                                                                                    >     }'
+  exit_code: 0
+  shell: bash
+  session_id: 6832c5bbfb4e4234831a3e5df922701e
+  cwd: /home/cloudshell-user
+  time: 1732987772
+- command: npm install express                                                                                                                                                                added 65 packages, and audited 66 packages in 5s                                                                                                                                                                                          13 packages are looking for funding                                                                                    run `npm fund` for details                                                                                                                                                                                                              found 0 vulnerabilities
+  exit_code: 0
+  shell: bash
+  session_id: 33a0574d4e9f4c0aa5efa578073e9d42
+  cwd: /home/cloudshell-user
+  time: 1732993692
+- command: git add package.json                                          fatal: not a git repository (or any parent up to mount point /home)                                                  Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+  exit_code: 0
+  shell: bash
+  session_id: 33a0574d4e9f4c0aa5efa578073e9d42
+  cwd: /home/cloudshell-user
+  time: 1732993701
+- command: git commit -m \"Add package.json\"                              fatal: not a git repository (or any parent up to mount point /home)                                                  Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+  exit_code: 0
+  shell: bash
+  session_id: 33a0574d4e9f4c0aa5efa578073e9d42
+  cwd: /home/cloudshell-user
+  time: 1732993701
+- command: git push origin <your-branch>                                 bash: syntax error near unexpected token `newline'
+  exit_code: 0
+  shell: bash
+  session_id: 33a0574d4e9f4c0aa5efa578073e9d42
+  cwd: /home/cloudshell-user
+  time: 1732993701
+- command: git add package.json                                          fatal: not a git repository (or any parent up to mount point /home)                                                  Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+  exit_code: 0
+  shell: bash
+  session_id: 33a0574d4e9f4c0aa5efa578073e9d42
+  cwd: /home/cloudshell-user
+  time: 1732993722
+- command: ls                                                            node_modules  package.json  package-lock.json
+  exit_code: 0
+  shell: bash
+  session_id: 33a0574d4e9f4c0aa5efa578073e9d42
+  cwd: /home/cloudshell-user
+  time: 1732993769
+- command: git init                                                      hint: Using 'master' as the name for the initial branch. This default branch name                                    hint: is subject to change. To configure the initial branch name to use in all                                       hint: of your new repositories, which will suppress this warning, call:                                              hint:                                                                                                                hint: \t git config --global init.defaultBranch <name>                                                                hint:                                                                                                                hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and                                              hint: 'development'. The just-created branch can be renamed via this command:                                        hint:                                                                                                                hint: \t git branch -m <name>                                                                                         Initialized empty Git repository in /home/cloudshell-user/.git/
+  exit_code: 0
+  shell: bash
+  session_id: 33a0574d4e9f4c0aa5efa578073e9d42
+  cwd: /home/cloudshell-user
+  time: 1732993796
+- command: git status                                                    On branch master                                                                                                                                                                                                                          No commits yet                                                                                                                                                                                                                            Untracked files:                                                                                                       (use \"git add <file>...\" to include in what will be committed)                                                     \t       .bash_logout                                                                                                 \t       .bash_profile                                                                                                \t       .bashrc                                                                                                      \t       .config/                                                                                                     \t       .lesshst                                                                                                     \t       .local/                                                                                                      \t       .npm/                                                                                                        \t       .zprofile                                                                                                    \t       .zshrc                                                                                                       \t       node_modules/                                                                                                \t       package-lock.json                                                                                            \t       package.json                                                                                                                                                                                                                      nothing added to commit but untracked files present (use \"git add\" to track)
+  exit_code: 0
+  shell: bash
+  session_id: 33a0574d4e9f4c0aa5efa578073e9d42
+  cwd: /home/cloudshell-user
+  time: 1732993803
+- command: git add package.json
+  exit_code: 0
+  shell: bash
+  session_id: 33a0574d4e9f4c0aa5efa578073e9d42
+  cwd: /home/cloudshell-user
+  time: 1732993813
