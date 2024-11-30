@@ -1,0 +1,15 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - cd SUPPLYCHAINMANAGEMENT    # Change to your correct folder if needed
+        - npm install
+        - npm run build
+  artifacts:
+    baseDirectory: build  # The directory where your build output (like index.html) resides
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
